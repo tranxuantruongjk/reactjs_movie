@@ -1,0 +1,36 @@
+@use "../../scss/" as *;
+
+.hero-slide {
+    margin-bottom: 3rem;
+}
+
+.hero-slide__item {
+    padding: 9rem 0;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        @include overlay();
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        // background-color: red;
+        background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+    }
+}
